@@ -16,7 +16,24 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
+        /* Listón de la fecha */
+   
+    /* Listón superior con la fecha */
+    .fecha-liston {
+      position: absolute;
+      top: -5px; /* sobre el borde del contenedor */
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #d4af37, #c39738, #ffd700);
+      color: white;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      padding: 5px 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+      text-shadow: 0 0 5px #fff, 0 0 8px #d4af37;
+      white-space: nowrap;
+    }
     /* Flores grandes abajo */
     .flores-grandes {
       width: 100%;
@@ -69,35 +86,40 @@
     .foto-principal-container {
       position: relative;
       width: 100%;
-      max-height: 90vh;
+      max-width: 400px; /* tamaño máximo del óvalo */
+      margin: 0 auto 70px; /* espacio para el nombre */
+      aspect-ratio: 3/4; /* proporción vertical tipo retrato */
+      border-radius: 50% / 45%; /* forma ovalada */
       overflow: hidden;
-      border-radius: 20px;
       box-shadow: 0 0 35px #d4af37;
+      border: 8px solid #d4af37; /* borde dorado */
       animation: fadeInScale 1.5s ease forwards;
       opacity: 0;
     }
+
     .foto-principal-container img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
       object-fit: cover;
-      border-radius: 20px;
     }
+
     .nombre-sobre-foto {
       position: absolute;
-      bottom: 15px;
+      bottom: -60px; /* lo coloca fuera del óvalo */
       left: 50%;
       transform: translateX(-50%);
       background: rgba(211, 175, 55, 0.8);
       color: white;
       font-family: 'Great Vibes', cursive;
       font-size: 3.5rem;
-      padding: 10px 20px;
+      padding: 10px 25px;
       border-radius: 30px;
       box-shadow: 0 0 20px #d4af37;
       white-space: nowrap;
       user-select: none;
       pointer-events: none;
+      text-shadow: 0 0 10px #d4af37, 0 0 20px #ffd700;
+      animation: glowText 3s ease-in-out infinite alternate;
     }
 
     h1 {
@@ -106,7 +128,7 @@
       color: #c39738;
       text-align: center;
       animation: glowText 3s ease-in-out infinite alternate;
-      margin: 15px 0 10px 0;
+      margin: 70px 0 10px 0; /* espacio extra por el nombre */
     }
 
     .poema {
@@ -233,50 +255,44 @@
 
     /* Reproductor estilo princesa */
     .audio-player {
-  margin: 25px auto 0;
-  width: 95%;
-  max-width: 360px;
-  background: #ffe4e1;
-  border: 3px solid #ffb6c1;
-  border-radius: 25px;
-  padding: 15px;
-  box-shadow: 0 0 15px #ff69b4;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: #c71585;
-  animation: fadeInUp 3s ease forwards;
-  opacity: 0;
-  user-select: none;
-  box-sizing: border-box;
-  overflow: hidden;
-}
+      margin: 25px auto 0;
+      width: 95%;
+      max-width: 360px;
+      background: #ffe4e1;
+      border: 3px solid #ffb6c1;
+      border-radius: 25px;
+      padding: 15px;
+      box-shadow: 0 0 15px #ff6969;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: #c71533;
+      animation: fadeInUp 3s ease forwards;
+      opacity: 0;
+      user-select: none;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
 
     .audio-player h3 {
       margin: 0 0 10px 0;
       font-family: 'Great Vibes', cursive;
       font-size: 2rem;
-      color: #ff1493;
-      text-shadow: 0 0 15px #ff69b4;
+      color: #ff2f14;
+      text-shadow: 0 0 15px #ff6969;
     }
     .audio-player audio {
       width: 100%;
       outline: none;
       border-radius: 20px;
-      box-shadow: 0 0 10px #ff69b4;
+      box-shadow: 0 0 10px #000000;
       cursor: pointer;
     }
-     .foto-flores{
-      display: block;
-      margin: 30px auto;
-      width: 90vw;
-      max-width: 600px;
-      height: auto;
-      border: 6px solid #c39738;
-      border-radius: 15px;
-      animation: fadeInScale 2.3s ease forwards;
-      opacity: 0;
-      box-shadow: 0 0 25px #d4af37;
-    }
+    .nombre-mano {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem; /* Ajusta tamaño según prefieras */
+  color: #080808;
+  text-shadow: 0 0 5px #0c0c0c;
+}
 
     /* Animations */
     @keyframes fadeInUp {
@@ -311,67 +327,57 @@
         text-shadow: 0 0 20px #c39738, 0 0 30px #d4af37, 0 0 40px #ffd700;
       }
     }
-    @media screen and (max-width: 480px) {
-  .nombre-sobre-foto {
-    font-size: 1.2rem;
-    padding: 5px 10px;
-    border-radius: 20px;
-    bottom: 8px;
-  }
 
-  .foto-grande {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
-  }
-}
+    @media screen and (max-width: 480px) {
+      .nombre-sobre-foto {
+        font-size: 1.6rem;
+        padding: 6px 12px;
+        bottom: -40px;
+      }
+
+      h1 {
+        margin-top: 60px;
+      }
+    }
   </style>
 </head>
 <body>
  
-  
-        <img class="flores" src="https://static.vecteezy.com/system/resources/thumbnails/009/597/218/small_2x/rose-flower-and-botanical-leaf-digital-painted-png.png" alt="Decoración floral" />
+  <img class="flores" src="https://i.imgur.com/YjkZEzm.png" alt="Decoración floral" />
 
-  
- 
   <div class="container">
     <div class="foto-principal-container">
-      <img
-        src="https://i.imgur.com/HEXVv91.jpeg"
-        alt="Foto grande de la Quinceañera"
-      />
-      <div class="nombre-sobre-foto">Mayli Janelis Torres Torres</div>
+      <img src="https://i.imgur.com/NL67F89.jpeg" alt="Foto grande de la Quinceañera" />
+      <h2 class="nombre-sobre-foto">.</div>
+         <h1>Mayli Janelis Torres Torres</h1> 
     </div>
 
     <h1>Mis 15 Años</h1>
 
+ <div class="fecha-liston">Te invito este 30 de agosto </div>
     <div class="poema">
       Agradezco de corazón ❤ a mis padres y familiares que hicieron posible que esta noche sea mágica e inolvidable.
     </div>
 
-   <img class="flores" src="https://i.imgur.com/UZqf4Pd.png" alt="Decoración floral" />
+    <img class="flores" src="https://i.imgur.com/VHSjOwV.png" alt="Decoración floral" />
 
     <div class="seccion-info">
       <div class="titulo-info">Con el amor de mis padres</div>
-      <p>Henry Leonardo Torres Parra &amp; Mayra Marixa Torres Durán</p>
+      <p class="nombre-mano">Henry Leonardo Torres Parra &amp; Mayra Marixa Torres Durán</p>
     </div>
 
     <div class="seccion-info">
       <div class="titulo-info">Con mis padrinos de honor</div>
-      <p>Nataly Durán &amp; Marcelo Durán</p>
+      <p class="nombre-mano">Nataly Durán &amp; Marcelo Durán</p>
     </div>
- <img class="flores" src="https://static.vecteezy.com/system/resources/previews/023/450/791/non_2x/pink-flower-bouquet-free-png.png" alt="Decoración floral" />
-    <img
-      class="foto-grande"
-      src="https://i.imgur.com/PSt8FaQ.jpeg"
-      alt="Foto grande"
-    />
- <img class="flores" src="https://static.vecteezy.com/system/resources/previews/023/451/075/non_2x/pink-flower-bouquet-free-png.png" alt="Decoración floral" />
 
+    <img class="flores" src="https://i.imgur.com/2bse9lb.png" alt="Decoración floral" />
+
+    <img class="foto-grande" src="https://i.imgur.com/PSt8FaQ.jpeg" alt="Foto grande" />
+
+    <img class="flores" src="https://i.imgur.com/2bse9lb.png" alt="Decoración floral" />
 
     <div class="ubicaciones">
-      
       <div class="cuadro">
         <h2>Recepción </h2>
         <p>
@@ -379,83 +385,62 @@
           168 Bank Street<br />
           Hightstown, New Jersey 08520
         </p>
-        <a
-          href="https://maps.google.com/?q=HIGHTSTOWN+FIRST+AID+SQUAD+168+Bank+Street+Hightstown+New+Jersey+08520"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="icon-link"
-          aria-label="Ver ubicación de la recepción"
-          title="Ver ubicación de la recepción"
-        >
+        <a href="https://maps.google.com/?q=HIGHTSTOWN+FIRST+AID+SQUAD+168+Bank+Street+Hightstown+New+Jersey+08520" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Ver ubicación de la recepción" title="Ver ubicación de la recepción">
           <!-- Icono Edificio SVG -->
-          <svg
-            viewBox="0 0 64 64"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-hidden="false"
-          >
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
             <path d="M12 60h40V16H12v44zm4-36h8v8h-8v-8zm0 12h8v8h-8v-8zm16-12h8v8h-8v-8zm0 12h8v8h-8v-8zM8 12h48v4H8v-4z" />
           </svg>
         </a>
       </div>
     </div>
 
-<div class="audio-player">
-  <h3>Melodía de Quinceaños</h3>
-  <audio id="audio" controls preload="auto" controlsList="nodownload noremoteplayback" autoplay>
-    <source
-      src="https://www.bensound.com/bensound-music/bensound-rhythmmagnet.mp3"
-      type="audio/mpeg"
-    />
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-</div>
+     <div class="audio-player">
+      <h3>Melodía de Quinceaños</h3>
+      <audio id="audio" controls preload="auto" controlsList="nodownload noremoteplayback" autoplay>
+        <source src="https://www.bensound.com/bensound-music/bensound-angelsbymyside.mp3" type="audio/mpeg" />
+        Tu navegador no soporta la reproducción de audio.
+      </audio>
+    </div> 
 
-    <button
-    
-      class="btn-confirmar"
-      onclick="window.open('https://wa.me/16093361162?text=Hola,+confirmo+mi+asistencia+a+los+15+a%C3%B1os+de+Mayli+Janelis+Torres+Torres', '_blank')"
-    >
+    <button class="btn-confirmar" onclick="window.open('https://wa.me/16093361162?text=Hola,+confirmo+mi+asistencia+a+los+15+a%C3%B1os+de+Mayli+Janelis+Torres+Torres', '_blank')">
       Confirmar Asistencia
     </button>
   </div>
-   <img class="flores" src="https://static.vecteezy.com/system/resources/thumbnails/009/597/218/small_2x/rose-flower-and-botanical-leaf-digital-painted-png.png" alt="Decoración floral" />
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-<script>
-  window.onload = () => {
-    // Lanzar confeti por 5 segundos
-    const duration = 5 * 1000;
-    const end = Date.now() + duration;
 
-    (function frame() {
-      confetti({
-        particleCount: 5,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 }
+  <img class="flores" src="https://i.imgur.com/YjkZEzm.png" alt="Decoración floral" />
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    window.onload = () => {
+      // Lanzar confeti por 5 segundos
+      const duration = 5 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+
+      // Intentar reproducir música automáticamente
+      const audio = document.getElementById('audio');
+      audio.play().catch(() => {
+        console.log('El navegador bloqueó la reproducción automática.'); 
       });
-      confetti({
-        particleCount: 5,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 }
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
-
-    // Intentar reproducir música automáticamente
-    const audio = document.getElementById('audio');
-    audio.play().catch(() => {
-      console.log('El navegador bloqueó la reproducción automática.'); 
-      // Aquí podrías agregar un botón para que el usuario toque y reproduzca manualmente
-    });
-  };
-</script>
-
-  
-</script>
+    };
+  </script>
 </body>
 </html>
