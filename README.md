@@ -262,10 +262,10 @@
       border: 3px solid #ffb6c1;
       border-radius: 25px;
       padding: 15px;
-      box-shadow: 0 0 15px #ff69b4;
+      box-shadow: 0 0 15px #ff6969;
       text-align: center;
       font-family: 'Playfair Display', serif;
-      color: #c71585;
+      color: #c71533;
       animation: fadeInUp 3s ease forwards;
       opacity: 0;
       user-select: none;
@@ -277,16 +277,22 @@
       margin: 0 0 10px 0;
       font-family: 'Great Vibes', cursive;
       font-size: 2rem;
-      color: #ff1493;
-      text-shadow: 0 0 15px #ff69b4;
+      color: #ff2f14;
+      text-shadow: 0 0 15px #ff6969;
     }
     .audio-player audio {
       width: 100%;
       outline: none;
       border-radius: 20px;
-      box-shadow: 0 0 10px #ff69b4;
+      box-shadow: 0 0 10px #000000;
       cursor: pointer;
     }
+    .nombre-mano {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem; /* Ajusta tamaño según prefieras */
+  color: #080808;
+  text-shadow: 0 0 5px #0c0c0c;
+}
 
     /* Animations */
     @keyframes fadeInUp {
@@ -348,21 +354,21 @@
 
     <h1>Mis 15 Años</h1>
 
- <div class="fecha-liston">30 de agosto del 2025</div>
+ <div class="fecha-liston">Te invito este 30 de agosto </div>
     <div class="poema">
       Agradezco de corazón ❤ a mis padres y familiares que hicieron posible que esta noche sea mágica e inolvidable.
     </div>
 
-    <img class="flores" src="https://i.imgur.com/UZqf4Pd.png" alt="Decoración floral" />
+    <img class="flores" src="https://i.imgur.com/VHSjOwV.png" alt="Decoración floral" />
 
     <div class="seccion-info">
       <div class="titulo-info">Con el amor de mis padres</div>
-      <p>Henry Leonardo Torres Parra &amp; Mayra Marixa Torres Durán</p>
+      <p class="nombre-mano">Henry Leonardo Torres Parra &amp; Mayra Marixa Torres Durán</p>
     </div>
 
     <div class="seccion-info">
       <div class="titulo-info">Con mis padrinos de honor</div>
-      <p>Nataly Durán &amp; Marcelo Durán</p>
+      <p class="nombre-mano">Nataly Durán &amp; Marcelo Durán</p>
     </div>
 
     <img class="flores" src="https://i.imgur.com/2bse9lb.png" alt="Decoración floral" />
