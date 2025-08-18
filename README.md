@@ -379,7 +379,7 @@
 
     <div class="ubicaciones">
       <div class="cuadro">
-        <h2>Recepción </h2>
+        <h2>Recepción 8:00pm </h2>
         <p>
           HIGHTSTOWN FIRST AID SQUAD, INC<br />
           168 Bank Street<br />
